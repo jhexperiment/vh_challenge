@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "51b36b72-1bf3-495c-a50c-43550e073cd0",
+		"name": "Vehicle History",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User - Full Fields",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Testy Namer\",\n    \"email\": \"test@email.com\",\n    \"active_status\": 1,\n    \"user_settings\": {\n        \"phone_number\": [\n            \"808-222-2222\"\n        ],\n        \"email\": [\n            \"test-alt1@email.com\",\n            \"test-alt2@email.com\"\n        ],\n        \"address\": [\n            \"1234 st honolulu hi 96707\"\n        ],\n        \"social_media_link\": [\n            \"instagram.com/namertesty\",\n            \"facebook.com/namertesty\",\n            \"twitter.com/namertesty\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User - No Fields",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User - Missing Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Testy Namer\",\n    \"active_status\": 1,\n    \"user_settings\": {\n        \"phone_number\": [\n            \"808-222-2222\"\n        ],\n        \"email\": [\n            \"test-alt1@email.com\",\n            \"test-alt2@email.com\"\n        ],\n        \"address\": [\n            \"1234 st honolulu hi 96707\"\n        ],\n        \"social_media_link\": [\n            \"instagram.com/namertesty\",\n            \"facebook.com/namertesty\",\n            \"twitter.com/namertesty\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User - Missing Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@email.com\",\n    \"active_status\": 1,\n    \"user_settings\": {\n        \"phone_number\": [\n            \"808-222-2222\"\n        ],\n        \"email\": [\n            \"test-alt1@email.com\",\n            \"test-alt2@email.com\"\n        ],\n        \"address\": [\n            \"1234 st honolulu hi 96707\"\n        ],\n        \"social_media_link\": [\n            \"instagram.com/namertesty\",\n            \"facebook.com/namertesty\",\n            \"twitter.com/namertesty\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users/55",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify User - Update Fields",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Testy Namer2\",\n    \"email\": \"test2@email.com\",\n    \"active_status\": 0,\n    \"user_settings\": {\n        \"phone_number\": [\n            {\n                \"id\": 1089,\n                \"value\": \"808-333-3333\"\n            }\n        ],\n        \"email\": [\n            {\n                \"id\": 1090,\n                \"value\": \"test-alt5@email.com\"\n            },\n            {\n                \"id\": 1091,\n                \"value\": \"test-alt6@email.com\"\n            }\n        ],\n        \"address\": [\n            {\n                \"id\": 1092,\n                \"value\": \"5678 st honolulu hi 96707\"\n            }\n        ],\n        \"social_media_link\": [\n            {\n                \"id\": 1093,\n                \"value\": \"instagram.com/namer2testy\"\n            },\n            {\n                \"id\": 1094,\n                \"value\": \"facebook.com/namer2testy\"\n            },\n            {\n                \"id\": 1095,\n                \"value\": \"twitter.com/namer2testy\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users/362",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users",
+						"362"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify User - New User Settings Email",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_settings\": {\n        \"email\": \"test-alt9@email.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users/362",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users",
+						"362"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify User - Delete Settings",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_settings\": {\n        \"phone_number\": [\n            {\n                \"id\": 1089,\n                \"delete\": true\n            }\n        ],\n        \"email\": [\n            {\n                \"id\": 1091,\n                \"delete\": true\n            }\n        ],\n        \"address\": [\n            {\n                \"id\": 1092,\n                \"delete\": true\n            }\n        ],\n        \"social_media_link\": [\n            {\n                \"id\": 1093,\n                \"delete\": true\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users/362",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users",
+						"362"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fields\": {\n        \"name\": true,\n        \"email\": true,\n        \"active_status\": true,\n        \"created_date\": true,\n        \"updated_date\": true,\n        \"user_settings\": {\n            \"phone_number\": true,\n            \"email\": true,\n            \"address\": true,\n            \"social_media_link\": true,\n            \"bad_setting\": true\n        },\n        \"bad_field\": true\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users/413",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users",
+						"413"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"limit\": 10,\n    \"offset\": 0,\n    \"fields\": {\n        \"name\": true,\n        \"email\": true,\n        \"active_status\": true,\n        \"created_date\": true,\n        \"updated_date\": true,\n        \"user_settings\": {\n            \"phone_number\": true,\n            \"email\": true,\n            \"address\": true,\n            \"social_media_link\": true,\n            \"bad_setting\": true\n        },\n        \"bad_field\": true\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User With Id (403)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users/444",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users",
+						"444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Multiple Users (403)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Multiple Users (403)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
